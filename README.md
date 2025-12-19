@@ -68,3 +68,11 @@ export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
 - Converting audio to WAV internally ensures consistent behavior across systems.
 - For best results, provide --num-speakers when the number of speakers is known.
 - Long recordings may require significant memory when running on CPU.
+
+### Model Licenses
+This package does not ship any pretrained models.
+Models are downloaded at runtime from Hugging Face and are subject
+to their respective licenses:
+- Whisper Turbo: OpenAI license
+- pyannote speaker diarization: pyannote community license
+Users are responsible for reviewing and complying with these licenses.
