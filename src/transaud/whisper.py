@@ -76,7 +76,7 @@ def transcribe_speaker_audio_to_text(output_filename:str,
                               desc="Transcribing audio ...",position=0):
         start, end = int(turn.start*sample_rate), int(turn.end*sample_rate)
         segment_audio = waveform[:,start:end].mean(dim=0).flatten().numpy()
-        transcription = asr_pipe(segment_audio, return_timestamps=True)
+        transcription = asr_pipe(segment_audio, return_timestamps=True, batch_size=4)
         
         raw_segments.append({
             "start": turn.start,
